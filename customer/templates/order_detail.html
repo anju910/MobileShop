@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block body_block%}
+
+
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-4 card p-3" style="width: 18rem;">
+            <img src="{{order.product.image.url}}" class="card-img-top p-2" alt="...">
+        </div>
+        <div class="col-4 border">
+                  <div class="card-body">
+                    <h5 class="card-title">{{order.product.mobile_name}}</h5>
+                  </div>
+            <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Brand:{{order.product.brand}}</li>
+                    <li class="list-group-item">Price:{{order.product.price}}/-</li>
+                    <li class="list-group-item">Memory:{{order.product.memory}}</li>
+                    <li class="list-group-item">OS:{{order.product.os}}</li>
+                    <li class="list-group-item">Specs:{{order.product.specs}}</li>
+
+                  </ul>
+            <div class="card-body">
+                    <a href="{%url 'myorder'%}" class="btn btn-primary">Back</a>
+                  </div>
+
+
+
+                </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+</div>
+{%endblock%}

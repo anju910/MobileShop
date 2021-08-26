@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block body_block%}
+<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+<div class="text-center mt-2"><h2>My Cart<i class="fab fas-3x fa-opencart ms-2"></i></h2></div>
+<div class="container">
+    <div class="row mt-4">
+        {%for item in items%}
+        <div class="card mb-3 ms-2" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4 p-2">
+                    <img src="{{item.product.image.url}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.product.mobile_name}}</h5>
+                        <p class="card-text">{{item.product.price}}/-</p>
+                        <p class="card-text">{{item.product.memory}}</p>
+                        <p class="card-text">{{item.product.specs}}</p>
+
+                    </div>
+                    <div class="card-body" >
+                        <a href="{%url 'placeorder' item.id item.product.id%}" class="btn btn-primary mt-2">CheckOut</a>
+
+
+                        <a href="{%url 'remove' item.id%}" class="btn btn-danger mt-2">Remove</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+
+{%endblock%}
